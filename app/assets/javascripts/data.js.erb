@@ -1,0 +1,389 @@
+$("#gobutton").click(function() {
+	var given = "user="+$("#userform").val()+"&r="+$("#rselect").val()
+	var data = "type=name&"+given
+	if ($("#gobutton").html() != "Loading") {
+		$.ajax({
+			url: "fetch",
+			type: "GET",
+			data: data,
+			dataType: "HTML",
+			success: function(response) {
+				var answer = JSON.parse(response)
+				$("#player").removeClass("hidden")
+				$("#level").html("lvl "+answer.summonerLevel)
+				$("#playername").html(answer.name)
+				given += "&summ_id="+answer.id
+				window.setTimeout(1000)
+				loadLeagues(given, $("#rselect").val(), answer.id)
+			}
+		})
+		$("#gobutton").html("Loading")
+	}
+})
+
+function loadLeagues(given, region, id) {
+	data = "type=league&"+given
+	$.ajax({
+		url: "fetch",
+		type: "GET",
+		data: data,
+		dataType: "HTML",
+		success: function(response) {
+			var leagues = JSON.parse(response)
+			var str = "<div class='center'>"
+			for (var l in leagues) {
+				str += "<div class='leaguelink'><a href='http://www.lolking.net/summoner/"+region+"/"+id+"#leagues' target='_blank'>"
+					str += "<img src='http://lkimg.zamimg.com/images/medals/"+leagues[l].tier.toLowerCase()+"_1.png' width='130'/><br>"
+					str += leagues[l].name+"<br>"+fixName(leagues[l].queue)
+				str += "</a></div>"
+				//str += leagues[l].name+" "+fixName(leagues[l].queue)+" "+leagues[l].tier+"<br>"
+			}
+			str += "</div>"
+			$("#leagueinfo").html(str)
+			loadGames(given)
+			//loadSummary(given)
+		}
+	})		
+}
+
+/*
+function loadSummary(given) {
+	data = "type=stats&"+given
+	$.ajax({
+		url: "fetch",
+		type: "GET",
+		data: data,
+		dataType: "HTML",
+		success: function(response) {
+			var answer = JSON.parse(response)
+			var str = "<div class='row'>"
+			for (var i=0;i<answer.playerStatSummaries.length;i++) {
+				var gdata = answer.playerStatSummaries[i]
+				str += "<div class='statdata small-6 columns'>"
+					str += gdata.playerStatSummaryType+"<br>"
+					if (gdata.wins) {
+						str += "Wins: <span class='assists'>"+gdata.wins+"</span><br>"
+					}
+					if (gdata.losses) {
+						str += "Losses: <span class='deaths'"+gdata.losses+"</span><br>"
+					}
+					if (gdata.wins && gdata.losses) {
+						str += "W/L: <span class='kda'>"+(gdata.wins/gdata.losses).toFixed(2)+"</span><br>"
+					}
+					var astats = gdata.aggregatedStats
+					var tstats = {}
+					if (astats) {
+						for (var j=0;j<astats.length;j++) {
+							var stats = astats[j]
+							tstats[stats.name] = stats.count
+							str += fixName(stats.name)+": "+stats.count+"<br>"
+						}
+						console.log(gdata)
+						console.log(tstats)
+
+					}
+				str += "</div>"
+			}
+			$("#statdata").removeClass("hidden")
+			$("#statdata").html(str)
+			window.setTimeout(500)
+			loadGames(given)
+		}
+	})
+} */
+
+function loadGames(given) {
+	data = "type=game&"+given
+	$.ajax({
+		url: "fetch",
+		type: "GET",
+		data: data,
+		dataType: "HTML",
+		success: function(response) {
+			var games = JSON.parse(response).games
+			$("#gamedata").html("")
+			for (var i=0;i<games.length;i++) {
+				var str = ""
+				var thisgame = games[i]
+				var type = fixName(thisgame.subType)
+
+				var tstats = {}
+				for (var j=0;j<thisgame.statistics.length;j++) {
+					if (!thisgame.statistics[j].value) thisgame.statistics[j].value = 0
+					tstats[thisgame.statistics[j].name] = thisgame.statistics[j].value
+				}
+
+				var timeplayed = tstats.TIME_PLAYED
+
+				var game = "LOSS"
+				var xtra = ""
+				if (tstats.WIN === 1) {
+					game = "WIN"
+					xtra = "greenback"
+				}
+
+				str += "<div class='gametype "+xtra+"'>"
+				str += "<div class='row gap'>"
+					str += "<div class='small-3 columns'>"
+						var champ = getChamp(thisgame.championId)
+						str += "<a href='http://www.lolking.net/champions/"+champ.toLowerCase()+"' target='_blank'>"
+						str += "<div class='champ'>" + champ + " <span class='small'>("+tstats.LEVEL+")</span></div>"
+						str += "<img src='http://lkimg.zamimg.com/shared/riot/images/champions/"+thisgame.championId+"_64.png' class='portrait'/>"
+						str += "</a>"
+					str += "</div>"
+					str += "<div class='small-6 columns center'>"
+					str += "<div class='t_gametype'>"+type+" - "+game+" - "+Beautify(timeplayed/60)+" minutes </div><br>"
+					str += "<span class='counting'>"
+						if (!tstats.CHAMPIONS_KILLED) {
+							tstats.CHAMPIONS_KILLED = 0
+						}
+						str += "Kills: <span class='kills'>"+tstats.CHAMPIONS_KILLED+"</span> "
+						if (!tstats.NUM_DEATHS) {
+							tstats.NUM_DEATHS = 0
+						}
+						str += "Deaths: <span class='deaths'>"+tstats.NUM_DEATHS+"</span> "
+						if (!tstats.ASSISTS) {
+							tstats.ASSISTS = 0
+						}
+						str += "Assists: <span class='assists'>"+tstats.ASSISTS+"</span> "
+						var kda = (tstats.CHAMPIONS_KILLED+tstats.ASSISTS)/tstats.NUM_DEATHS
+						if (!isFinite(kda))
+							kda = "∞" 
+						else kda = kda.toFixed(2)
+						str += "KDA: <span class='kda'>"+kda+"</span>"
+						str += "<div class='center'>"
+						if (!tstats.MINIONS_KILLED)
+							tstats.MINIONS_KILLED = 0
+						if (!tstats.NEUTRAL_MINIONS_KILLED)
+							tstats.NEUTRAL_MINIONS_KILLED = 0
+						str += "CS: <span class='cs'>"+(tstats.MINIONS_KILLED+tstats.NEUTRAL_MINIONS_KILLED)+"</span> "
+						str += "Gold: <span class='gold'>"+tstats.GOLD_EARNED+"</span> "
+						var gpm = tstats.GOLD_EARNED/(tstats.TIME_PLAYED/60)
+						gpm = gpm.toFixed(2)
+						str += "Gold/m: <span class='goldm'>"+gpm+"</span>"
+						str += "</div>"
+					str += "</span>"
+					str += "<div class='row'>"
+					str += "<div class='small-2 columns'>"
+					str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell1+".png); width=32; height=32;'></div>"
+					str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell2+".png);'></div>"
+					str += "</div>" // end columns
+					str += "<div class='small-10 columns'>"
+					if (tstats.ITEM0)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM0+"_32.png);'></div>"
+					if (tstats.ITEM1)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM1+"_32.png);'></div>"
+					if (tstats.ITEM2)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM2+"_32.png);'></div>"
+					if (tstats.ITEM3)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM3+"_32.png);'></div>"
+					if (tstats.ITEM4)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM4+"_32.png);'></div>"
+					if (tstats.ITEM5)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM5+"_32.png);'></div>"
+					if (tstats.ITEM6)
+					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM6+"_32.png);'></div>"
+					str += "</div>" // end columns
+					str += "</div>" // end row
+					str += "</div>"
+					str += "<div class='small-2 columns'>"
+						str += "<div class='button expando' id='e_"+thisgame.createDate+"'>Show</div>"
+					str += "</div>"
+				str += "</div>"
+				str += "<div id='g_"+thisgame.createDate+"' class='hidden'>"
+					str += "<hr>"
+					str += "<div class='row'>"
+					str += "<div class='small-6 columns'>"
+					str += "<div class='statdisplay'><ul>"
+						str += "<li>Total Damage Dealt: "+tstats.TOTAL_DAMAGE_DEALT+"</li>"
+						str += "<li>Total Damage Taken: "+tstats.TOTAL_DAMAGE_TAKEN+"</li>"
+						if (tstats.KILLING_SPREES)
+						str += "<li>Killing sprees: "+tstats.KILLING_SPREES+"</li>"
+						if (tstats.LARGEST_MULTI_KILL)
+						str += "<li>Largest multi-kill: "+tstats.LARGEST_MULTI_KILL+"</li>"
+						if (tstats.LARGEST_KILLING_SPREE)
+						str += "<li>Largest killing spree: "+tstats.LARGEST_KILLING_SPREE+"</li>"
+						if (tstats.LARGEST_CRITICAL_STRIKE)
+						str += "<li>Biggest crit: "+tstats.LARGEST_CRITICAL_STRIKE+"</li>"
+					str += "</ul></div>"
+					str += "</div>" // close columns
+					str += "<div class='small-6 columns'>"
+					str += "<div class='statdisplay'><ul>"
+						if (tstats.TOTAL_TIME_CROWD_CONTROL_DEALT)
+						str += "<li>Total CC dealt: "+tstats.TOTAL_TIME_CROWD_CONTROL_DEALT+" seconds</li>"
+						if (tstats.TOTAL_HEAL && tstats.TOTAL_UNITS_HEALED)
+						str += "<li>Total Healed: "+tstats.TOTAL_HEAL+" HP on "+tstats.TOTAL_UNITS_HEALED+" unit(s)</li>"
+						if (tstats.TURRETS_KILLED)
+						str += "<li>Turrets destroyed: "+tstats.TURRETS_KILLED+"</li>"
+						if (tstats.VISION_WARDS_BOUGHT)
+						str += "<li>Vision wards bought: "+tstats.VISION_WARDS_BOUGHT+"</li>"
+						if (tstats.WARD_PLACED)
+						str += "<li>Wards placed: "+tstats.WARD_PLACED+"</li>"
+						if (tstats.WARD_KILLED)
+						str += "<li>Wards killed: "+tstats.WARD_KILLED+"</li>"
+					str += "</ul></div>"
+					str += "</div>" // close columns
+					str += "</div>" //close row
+					// charts and numbers
+					str += "<div class='row gap'>"
+						str += "<div class='small-8 columns center'>"
+							var thaid = "c_"+thisgame.createDate
+							var thaid_2 = "c2_"+thisgame.createDate
+							var thaid_3 = "c3_"+thisgame.createDate
+							str += "<canvas id="+thaid+" class='center'></canvas>"
+						str += "</div>"
+						str += "<div class='small-4 columns'>"
+							str += "<div class='datablock'>"
+								str += "Minions Slain:<br>"
+								if (!tstats.MINIONS_KILLED) tstats.MINIONS_KILLED = 0
+								if (!tstats.NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE) tstats.NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE = 0
+								if (!tstats.NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE) tstats.NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE = 0
+								str += "Lane minions: "+tstats.MINIONS_KILLED+"<br>"
+								str += "Friendly jungle: "+tstats.NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE+"<br>"
+								str += "Enemy jungle: "+tstats.NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE
+							str += "</div>"
+						str += "</div>"
+					str += "</div>"
+					// damage taken chart
+					str += "<div class='row'>"
+						str += "<div class='small-8 columns'>"
+							str += "<canvas id="+thaid_2+" class='center' height='350'></canvas>"
+						str += "</div>"
+						str += "<div class='small-4 columns'>"
+							str += "<div class='datablock'>"
+								if (!tstats.TRUE_DAMAGE_DEALT_PLAYER) tstats.TRUE_DAMAGE_DEALT_PLAYER = 0
+								if (!tstats.TRUE_DAMAGE_DEALT_TO_CHAMPIONS) tstats.TRUE_DAMAGE_DEALT_TO_CHAMPIONS = 0
+								if (!tstats.TRUE_DAMAGE_TAKEN) tstats.TRUE_DAMAGE_TAKEN = 0
+								if (!tstats.MAGIC_DAMAGE_DEALT_PLAYER) tstats.MAGIC_DAMAGE_DEALT_PLAYER = 0
+								if (!tstats.MAGIC_DAMAGE_DEALT_TO_CHAMPIONS) tstats.MAGIC_DAMAGE_DEALT_TO_CHAMPIONS = 0
+								if (!tstats.MAGIC_DAMAGE_TAKEN) tstats.MAGIC_DAMAGE_TAKEN = 0
+								if (!tstats.PHYSICAL_DAMAGE_DEALT_PLAYER) tstats.PHYSICAL_DAMAGE_DEALT_PLAYER = 0
+								if (!tstats.PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS) tstats.PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS = 0
+								if (!tstats.PHYSICAL_DAMAGE_TAKEN) tstats.PHYSICAL_DAMAGE_TAKEN = 0
+								str += "<div class='datablock'>"
+									str += "Damage Dealt:<br>"
+									str += "Magic: <span class='kda'>"+tstats.MAGIC_DAMAGE_DEALT_TO_CHAMPIONS+"</span><br>"
+									str += "Physical: <span class='kda'>"+tstats.PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS+"</span><br>"
+									str += "True: <span class='kda'>"+tstats.TRUE_DAMAGE_DEALT_TO_CHAMPIONS+"</span><br>"
+									str += "<div class='gap'>Damage Taken:</div>"
+									str += "Magic: <span class='kills'>"+tstats.MAGIC_DAMAGE_TAKEN+"</span><br>"
+									str += "Physical: <span class='kills'>"+tstats.PHYSICAL_DAMAGE_TAKEN+"</span><br>"
+									str += "True: <span class='kills'>"+tstats.TRUE_DAMAGE_TAKEN+"</span>"
+								str += "</div>"
+							str += "</div>"
+						str += "</div>"
+					str += "</div>"
+					// gold graph
+					str += "<div class='row'>"
+						str += "<div class='small-8 columns center'>"
+							str += "<canvas id="+thaid_3+" class='center'></canvas>"
+						str += "</div>"
+						str += "<div class='small-4 columns'>"
+							str += "<div class='datablock'>"
+								str += "Gold:<br>"
+								if (!tstats.GOLD_EARNED) tstats.GOLD_EARNED = 0
+								if (!tstats.GOLD_SPENT) tstats.GOLD_SPENT = 0
+								str += "Earned: <span class='gold'>"+tstats.GOLD_EARNED+"</span><br>"
+								str += "Spent: <span class='goldm'>"+tstats.GOLD_SPENT+"</span><br>"
+								str += "Efficiency: "+(tstats.GOLD_SPENT/tstats.GOLD_EARNED).toFixed(2)+"%<br>"
+								str += "<span class='small'>! Gold Spent is sometimes reported incorrectly.</span>"
+							str += "</div>"
+						str += "</div>"
+					str += "</div>"
+					// api data dump for the curious
+					str += "<div class='row dump'>"
+					str += "<div class='center'>RAW DATA</div>"
+						for (var j=0;j<thisgame.statistics.length;j++) {
+							str += "<div class='small-6 columns'><span class='dump_item'>"+fixName(thisgame.statistics[j].name)
+							str += ":</span> "+thisgame.statistics[j].value+"</div>"
+						}
+					str += "</div>"
+				str += "</div>"
+				str += "</div>"
+				str += "</div>"
+				$("#gamedata").append(str)
+				drawGraphs(tstats, thaid, thaid_2, thaid_3)
+			}
+			$("#gamedata").removeClass("hidden")
+			declareListener()
+//			loadLeagues(given)
+		}
+	})	
+}
+
+function declareListener() {
+	$(".gametype").on('click', function(e) {
+		if (e.target.id) {
+			if (e.target.id.split("_")[0] === 'e') {
+				var button = $("#"+e.target.id)
+				var target = $("#g_"+e.target.id.split("_")[1])
+				if (button.html() === "Show") {
+					button.html("Hide")
+					target.removeClass("hidden")
+				} else {
+					button.html("Show")
+					target.addClass("hidden")
+				}
+			}
+		}
+	})
+}
+
+function drawGraphs(tstats, thaid, thaid_2, thaid_3) {
+	
+	var ctx = $("#"+thaid).get(0).getContext("2d")
+	var data = [
+								{
+									value: tstats.MINIONS_KILLED,
+									color: "#B07F9D"
+								},
+								{
+									value : tstats.NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE,
+									color : "#CF4023"
+								},
+								{
+									value : tstats.NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE,
+									color : "#7FB089"
+								}
+							]
+	new Chart(ctx).Doughnut(data)
+ 
+	var ctx2 = $("#"+thaid_2).get(0).getContext("2d")
+	data = {
+	labels : ["True","Magic","Physical"],
+	datasets : [
+		{
+			// damage taken
+			fillColor : "rgba(143,69,69,0.5)",
+			strokeColor : "rgba(156,42,42,0.8)",
+			pointColor : "rgba(155,42,42,1)",
+			pointStrokeColor : "#fff",
+			data : [tstats.TRUE_DAMAGE_TAKEN, tstats.MAGIC_DAMAGE_TAKEN,
+				tstats.PHYSICAL_DAMAGE_TAKEN]
+		},
+		{
+			// damage dealt to champions
+			fillColor : "rgba(151,187,205,0.5)",
+			strokeColor : "rgba(151,187,205,1)",
+			pointColor : "rgba(151,187,205,1)",
+			pointStrokeColor : "#fff",
+			data : [tstats.TRUE_DAMAGE_DEALT_TO_CHAMPIONS, tstats.MAGIC_DAMAGE_DEALT_TO_CHAMPIONS,
+				tstats.PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS]
+		}
+	]
+	}
+	new Chart(ctx2).Radar(data)
+
+	var ctx3 = $("#"+thaid_3).get(0).getContext("2d")
+	data = [
+								{
+									value: tstats.GOLD_SPENT,
+									color: "#9E7908"
+								},
+								{
+									value : tstats.GOLD_EARNED - tstats.GOLD_SPENT,
+									color : "#877A16"
+								}
+							]
+	new Chart(ctx3).Doughnut(data)
+}

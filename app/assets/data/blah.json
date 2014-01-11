@@ -1,0 +1,3056 @@
+{
+ "name": "GAME",
+ "children": [
+  {
+   "name": "MINIONS_KILLED",
+   "children": [
+    {
+     "name": "NEUTRAL_MINIONS_KILLED",
+     "children": [
+      {"name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE", "size": 18},
+      {"name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE", "size": 6},
+     ]
+    },
+    {"name": "MINIONS_KILLED", "size": 100}
+    ]
+  }
+  ]
+}
+
+      {"name": "Operator", "size": 2490},
+      {"name": "OperatorList", "size": 5248},
+      {"name": "OperatorSequence", "size": 4190},
+      {"name": "OperatorSwitch", "size": 2581},
+      {"name": "SortOperator", "size": 2023}
+     ]
+    },
+    {"name": "Visualization", "size": 16540}
+/*{
+   "games": [
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 16,
+               "teamId": 200,
+               "summonerId": 407750
+            },
+            {
+               "championId": 92,
+               "teamId": 100,
+               "summonerId": 492066
+            },
+            {
+               "championId": 79,
+               "teamId": 100,
+               "summonerId": 19441663
+            },
+            {
+               "championId": 412,
+               "teamId": 100,
+               "summonerId": 21705406
+            },
+            {
+               "championId": 119,
+               "teamId": 100,
+               "summonerId": 442232
+            },
+            {
+               "championId": 236,
+               "teamId": 200,
+               "summonerId": 44989319
+            },
+            {
+               "championId": 115,
+               "teamId": 200,
+               "summonerId": 20181170
+            },
+            {
+               "championId": 60,
+               "teamId": 200,
+               "summonerId": 44979324
+            },
+            {
+               "championId": 36,
+               "teamId": 100,
+               "summonerId": 39201307
+            }
+         ],
+         "gameId": 1230023544,
+         "spell1": 14,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 16
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 11789
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 219
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 3
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 3355
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 95041
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 28014
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 1
+            },
+            {
+               "id": 23,
+               "name": "WIN",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 3
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3082
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 1056
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3077
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 3
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 1011
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3111
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 77254
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3065
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 1424
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 8394
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 1012
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 5114
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 16361
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 13497
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 18113
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 7370
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 14886
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 3
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 1666
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 275
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 6
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 1507
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 14
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 19,
+         "createDate": 1389251375296
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 64,
+               "teamId": 200,
+               "summonerId": 24296095
+            },
+            {
+               "championId": 10,
+               "teamId": 200,
+               "summonerId": 20487297
+            },
+            {
+               "championId": 254,
+               "teamId": 100,
+               "summonerId": 20817006
+            },
+            {
+               "championId": 114,
+               "teamId": 100,
+               "summonerId": 19959537
+            },
+            {
+               "championId": 76,
+               "teamId": 200,
+               "summonerId": 21622356
+            },
+            {
+               "championId": 412,
+               "teamId": 100,
+               "summonerId": 30253459
+            },
+            {
+               "championId": 102,
+               "teamId": 100,
+               "summonerId": 20153677
+            },
+            {
+               "championId": 22,
+               "teamId": 200,
+               "summonerId": 21084600
+            },
+            {
+               "championId": 222,
+               "teamId": 100,
+               "summonerId": 23850925
+            }
+         ],
+         "gameId": 1230069143,
+         "spell1": 12,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 14
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 9177
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 5
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 161
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 2
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 6835
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 76218
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 25035
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 2
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3067
+            },
+            {
+               "id": 25,
+               "name": "LOSE",
+               "value": 1
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 94,
+               "name": "WAS_AFK",
+               "value": 1
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 3
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 1056
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3265
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 35631
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3068
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 626
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 5329
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 366
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 912
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 39961
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 6706
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 18849
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 5428
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 1
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 9619
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 2
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 1987
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 334
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 3
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 1
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 856
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 2
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 19,
+         "createDate": 1389257849791
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 69,
+               "teamId": 100,
+               "summonerId": 407750
+            },
+            {
+               "championId": 51,
+               "teamId": 100,
+               "summonerId": 20901439
+            },
+            {
+               "championId": 17,
+               "teamId": 200,
+               "summonerId": 492066
+            },
+            {
+               "championId": 20,
+               "teamId": 100,
+               "summonerId": 20967047
+            },
+            {
+               "championId": 1,
+               "teamId": 100,
+               "summonerId": 19602876
+            },
+            {
+               "championId": 412,
+               "teamId": 200,
+               "summonerId": 442232
+            },
+            {
+               "championId": 236,
+               "teamId": 200,
+               "summonerId": 21540249
+            },
+            {
+               "championId": 121,
+               "teamId": 200,
+               "summonerId": 44979324
+            },
+            {
+               "championId": 154,
+               "teamId": 100,
+               "summonerId": 30962498
+            }
+         ],
+         "gameId": 1230043579,
+         "spell1": 14,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 18
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 18911
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 8
+            },
+            {
+               "id": 5,
+               "name": "BARRACKS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 2
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 283
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 5
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 11505
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 239156
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 72428
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 2
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3026
+            },
+            {
+               "id": 25,
+               "name": "LOSE",
+               "value": 1
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3065
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3074
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 32
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3143
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3102
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 191024
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3265
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 3718
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 36079
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 1518
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 7285
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 44413
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 24280
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 32905
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 15476
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 33243
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 21
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 3019
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 985
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 12
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 11
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 3443
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 19
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 19,
+         "createDate": 1389254742484
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 17,
+               "teamId": 100,
+               "summonerId": 21328540
+            },
+            {
+               "championId": 222,
+               "teamId": 200,
+               "summonerId": 21328590
+            },
+            {
+               "championId": 89,
+               "teamId": 100,
+               "summonerId": 24826080
+            },
+            {
+               "championId": 254,
+               "teamId": 100,
+               "summonerId": 216635
+            },
+            {
+               "championId": 32,
+               "teamId": 200,
+               "summonerId": 35221469
+            },
+            {
+               "championId": 64,
+               "teamId": 200,
+               "summonerId": 20263474
+            },
+            {
+               "championId": 30,
+               "teamId": 100,
+               "summonerId": 21911338
+            },
+            {
+               "championId": 51,
+               "teamId": 100,
+               "summonerId": 20823651
+            },
+            {
+               "championId": 43,
+               "teamId": 200,
+               "summonerId": 35592112
+            }
+         ],
+         "gameId": 1229801869,
+         "spell1": 14,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 17
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 12095
+            },
+            {
+               "id": 5,
+               "name": "BARRACKS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 203
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 8
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 7025
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 144468
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 21261
+            },
+            {
+               "id": 16,
+               "name": "DOUBLE_KILLS",
+               "value": 1
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 1
+            },
+            {
+               "id": 23,
+               "name": "WIN",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 8
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 1054
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3065
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3153
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 23
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3068
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 1055
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 64858
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3111
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 2
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 452
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 8025
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 452
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 4569
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 79157
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 11725
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 12849
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 6704
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 2
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 4149
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 10
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 1377
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 18
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 6
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 13
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 387
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 105,
+               "name": "WARD_KILLED",
+               "value": 2
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 2
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 102,
+         "createDate": 1389237140688
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 412,
+               "teamId": 200,
+               "summonerId": 19276496
+            },
+            {
+               "championId": 30,
+               "teamId": 200,
+               "summonerId": 22079096
+            },
+            {
+               "championId": 267,
+               "teamId": 100,
+               "summonerId": 37838557
+            },
+            {
+               "championId": 222,
+               "teamId": 200,
+               "summonerId": 20417878
+            },
+            {
+               "championId": 157,
+               "teamId": 100,
+               "summonerId": 216635
+            },
+            {
+               "championId": 92,
+               "teamId": 100,
+               "summonerId": 49729446
+            },
+            {
+               "championId": 81,
+               "teamId": 100,
+               "summonerId": 20481630
+            },
+            {
+               "championId": 64,
+               "teamId": 100,
+               "summonerId": 49729443
+            },
+            {
+               "championId": 7,
+               "teamId": 200,
+               "summonerId": 31820920
+            }
+         ],
+         "gameId": 1231652942,
+         "spell1": 12,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 17
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 10135
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 7
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 149
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 4
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 9220
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 79943
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 45415
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 4
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3260
+            },
+            {
+               "id": 25,
+               "name": "LOSE",
+               "value": 1
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3068
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 9
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 1056
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 1056
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 36894
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 1031
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 556
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 5754
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 148
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 2545
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 42493
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 12763
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 37122
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 10070
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 20366
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 9
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 1923
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 385
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 9
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 2538
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 105,
+               "name": "WARD_KILLED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 8
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 19,
+         "createDate": 1389404843538
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 110,
+               "teamId": 100,
+               "summonerId": 45660499
+            },
+            {
+               "championId": 81,
+               "teamId": 200,
+               "summonerId": 30871780
+            },
+            {
+               "championId": 120,
+               "teamId": 100,
+               "summonerId": 21208070
+            },
+            {
+               "championId": 80,
+               "teamId": 200,
+               "summonerId": 138243
+            },
+            {
+               "championId": 43,
+               "teamId": 100,
+               "summonerId": 19839789
+            },
+            {
+               "championId": 101,
+               "teamId": 100,
+               "summonerId": 16685
+            },
+            {
+               "championId": 79,
+               "teamId": 200,
+               "summonerId": 20481630
+            },
+            {
+               "championId": 412,
+               "teamId": 200,
+               "summonerId": 20127972
+            },
+            {
+               "championId": 24,
+               "teamId": 100,
+               "summonerId": 45459632
+            }
+         ],
+         "gameId": 1230780993,
+         "spell1": 12,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 18
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 18300
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 6
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 2
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 228
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 4
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 11380
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 190593
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 62909
+            },
+            {
+               "id": 23,
+               "name": "WIN",
+               "value": 1
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3065
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3068
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 22
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3153
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 1031
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 105520
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3265
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 776
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 23649
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 440
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 6951
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 84297
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 23346
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 37003
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 15955
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 2
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 32180
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 16
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 2835
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 774
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 14
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 6
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 2256
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 27
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 19,
+         "createDate": 1389325677881
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 17,
+               "teamId": 100,
+               "summonerId": 21328540
+            },
+            {
+               "championId": 254,
+               "teamId": 200,
+               "summonerId": 42859823
+            },
+            {
+               "championId": 236,
+               "teamId": 200,
+               "summonerId": 31546
+            },
+            {
+               "championId": 238,
+               "teamId": 100,
+               "summonerId": 21328590
+            },
+            {
+               "championId": 1,
+               "teamId": 200,
+               "summonerId": 24826080
+            },
+            {
+               "championId": 9,
+               "teamId": 100,
+               "summonerId": 19839789
+            },
+            {
+               "championId": 412,
+               "teamId": 100,
+               "summonerId": 23590762
+            },
+            {
+               "championId": 92,
+               "teamId": 200,
+               "summonerId": 35592112
+            },
+            {
+               "championId": 18,
+               "teamId": 100,
+               "summonerId": 45459632
+            }
+         ],
+         "gameId": 1229851341,
+         "spell1": 14,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 18
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 23969
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 4
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 2
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 392
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 18
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 16265
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 297159
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 82230
+            },
+            {
+               "id": 17,
+               "name": "TRIPLE_KILLS",
+               "value": 1
+            },
+            {
+               "id": 16,
+               "name": "DOUBLE_KILLS",
+               "value": 3
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 3
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 6
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3075
+            },
+            {
+               "id": 25,
+               "name": "LOSE",
+               "value": 1
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3065
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3074
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 22
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3143
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3265
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 262083
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3102
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 3
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 2370
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 43992
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 1732
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 25140
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 32704
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 35319
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 35245
+            },
+            {
+               "id": 39,
+               "name": "LARGEST_CRITICAL_STRIKE",
+               "value": 664
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 8445
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3364
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 27008
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 13
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 3091
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 757
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 13
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 9
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 2992
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 105,
+               "name": "WARD_KILLED",
+               "value": 4
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 16
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 58,
+         "createDate": 1389241154045
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 69,
+               "teamId": 200,
+               "summonerId": 407750
+            },
+            {
+               "championId": 236,
+               "teamId": 100,
+               "summonerId": 19482114
+            },
+            {
+               "championId": 117,
+               "teamId": 200,
+               "summonerId": 27020067
+            },
+            {
+               "championId": 64,
+               "teamId": 200,
+               "summonerId": 23897083
+            },
+            {
+               "championId": 157,
+               "teamId": 100,
+               "summonerId": 20851493
+            },
+            {
+               "championId": 51,
+               "teamId": 200,
+               "summonerId": 44989319
+            },
+            {
+               "championId": 24,
+               "teamId": 200,
+               "summonerId": 19250176
+            },
+            {
+               "championId": 62,
+               "teamId": 100,
+               "summonerId": 39201307
+            },
+            {
+               "championId": 53,
+               "teamId": 100,
+               "summonerId": 20711579
+            }
+         ],
+         "gameId": 1229080794,
+         "spell1": 14,
+         "teamId": 100,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 18
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 16724
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 6
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 295
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 9
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 13480
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 219426
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 51399
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 3
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 4
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3102
+            },
+            {
+               "id": 25,
+               "name": "LOSE",
+               "value": 1
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 100
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3075
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 15
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3153
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3260
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 60542
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3068
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 1008
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 19763
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 1008
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 8822
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 157876
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 39185
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 29416
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 29354
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 2
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 18021
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 2462
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 741
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 11
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 15
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 2218
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 12
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 102,
+         "createDate": 1389167766987
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 51,
+               "teamId": 100,
+               "summonerId": 37847627
+            },
+            {
+               "championId": 222,
+               "teamId": 200,
+               "summonerId": 21808912
+            },
+            {
+               "championId": 39,
+               "teamId": 100,
+               "summonerId": 40769402
+            },
+            {
+               "championId": 1,
+               "teamId": 100,
+               "summonerId": 30974624
+            },
+            {
+               "championId": 32,
+               "teamId": 100,
+               "summonerId": 29227969
+            },
+            {
+               "championId": 34,
+               "teamId": 100,
+               "summonerId": 31157711
+            },
+            {
+               "championId": 44,
+               "teamId": 200,
+               "summonerId": 19873434
+            },
+            {
+               "championId": 64,
+               "teamId": 200,
+               "summonerId": 33339146
+            },
+            {
+               "championId": 99,
+               "teamId": 200,
+               "summonerId": 20107437
+            }
+         ],
+         "gameId": 1231455579,
+         "spell1": 12,
+         "teamId": 200,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 18
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 18761
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 2
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 5
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 321
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 11
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 12670
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 220291
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 55666
+            },
+            {
+               "id": 20,
+               "name": "KILLING_SPREES",
+               "value": 2
+            },
+            {
+               "id": 23,
+               "name": "WIN",
+               "value": 1
+            },
+            {
+               "id": 22,
+               "name": "LARGEST_KILLING_SPREE",
+               "value": 7
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 3065
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 200
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3026
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 8
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 3091
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3255
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 103929
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 3025
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 440
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 21054
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 352
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 8017
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 115924
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 38942
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 30016
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 30572
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 2
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 32464
+            },
+            {
+               "id": 108,
+               "name": "NEUTRAL_MINIONS_KILLED_YOUR_JUNGLE",
+               "value": 3
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 2638
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 284
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 10
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 5
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 4596
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 9
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "NORMAL",
+         "championId": 19,
+         "createDate": 1389392372005
+      },
+      {
+         "gameType": "MATCHED_GAME",
+         "fellowPlayers": [
+            {
+               "championId": 267,
+               "teamId": 100,
+               "summonerId": 28880869
+            },
+            {
+               "championId": 121,
+               "teamId": 200,
+               "summonerId": 272354
+            },
+            {
+               "championId": 222,
+               "teamId": 100,
+               "summonerId": 20131827
+            },
+            {
+               "championId": 102,
+               "teamId": 200,
+               "summonerId": 44317220
+            },
+            {
+               "championId": 79,
+               "teamId": 200,
+               "summonerId": 19840077
+            },
+            {
+               "championId": 37,
+               "teamId": 200,
+               "summonerId": 19199530
+            },
+            {
+               "championId": 51,
+               "teamId": 200,
+               "summonerId": 44989319
+            },
+            {
+               "championId": 55,
+               "teamId": 100,
+               "summonerId": 398435
+            },
+            {
+               "championId": 72,
+               "teamId": 100,
+               "summonerId": 39201307
+            }
+         ],
+         "gameId": 1229375898,
+         "spell1": 12,
+         "teamId": 100,
+         "statistics": [
+            {
+               "id": 1,
+               "name": "LEVEL",
+               "value": 17
+            },
+            {
+               "id": 2,
+               "name": "GOLD_EARNED",
+               "value": 12762
+            },
+            {
+               "id": 4,
+               "name": "NUM_DEATHS",
+               "value": 1
+            },
+            {
+               "id": 5,
+               "name": "BARRACKS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 6,
+               "name": "TURRETS_KILLED",
+               "value": 3
+            },
+            {
+               "id": 7,
+               "name": "MINIONS_KILLED",
+               "value": 294
+            },
+            {
+               "id": 8,
+               "name": "CHAMPIONS_KILLED",
+               "value": 1
+            },
+            {
+               "id": 9,
+               "name": "GOLD_SPENT",
+               "value": 5585
+            },
+            {
+               "id": 10,
+               "name": "TOTAL_DAMAGE_DEALT",
+               "value": 177294
+            },
+            {
+               "id": 11,
+               "name": "TOTAL_DAMAGE_TAKEN",
+               "value": 32160
+            },
+            {
+               "id": 23,
+               "name": "WIN",
+               "value": 1
+            },
+            {
+               "id": 93,
+               "name": "ITEM5",
+               "value": 1033
+            },
+            {
+               "id": 24,
+               "name": "TEAM",
+               "value": 100
+            },
+            {
+               "id": 92,
+               "name": "ITEM4",
+               "value": 3065
+            },
+            {
+               "id": 89,
+               "name": "ITEM1",
+               "value": 3143
+            },
+            {
+               "id": 28,
+               "name": "NEUTRAL_MINIONS_KILLED",
+               "value": 6
+            },
+            {
+               "id": 88,
+               "name": "ITEM0",
+               "value": 1054
+            },
+            {
+               "id": 91,
+               "name": "ITEM3",
+               "value": 3068
+            },
+            {
+               "id": 31,
+               "name": "PHYSICAL_DAMAGE_DEALT_PLAYER",
+               "value": 44005
+            },
+            {
+               "id": 90,
+               "name": "ITEM2",
+               "value": 1001
+            },
+            {
+               "id": 30,
+               "name": "LARGEST_MULTI_KILL",
+               "value": 1
+            },
+            {
+               "id": 102,
+               "name": "TRUE_DAMAGE_DEALT_PLAYER",
+               "value": 904
+            },
+            {
+               "id": 34,
+               "name": "MAGIC_DAMAGE_TAKEN",
+               "value": 10270
+            },
+            {
+               "id": 103,
+               "name": "TRUE_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 870
+            },
+            {
+               "id": 100,
+               "name": "PHYSICAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 4965
+            },
+            {
+               "id": 32,
+               "name": "MAGIC_DAMAGE_DEALT_PLAYER",
+               "value": 132385
+            },
+            {
+               "id": 101,
+               "name": "TOTAL_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 27477
+            },
+            {
+               "id": 33,
+               "name": "PHYSICAL_DAMAGE_TAKEN",
+               "value": 20907
+            },
+            {
+               "id": 99,
+               "name": "MAGIC_DAMAGE_DEALT_TO_CHAMPIONS",
+               "value": 21642
+            },
+            {
+               "id": 97,
+               "name": "SIGHT_WARDS_BOUGHT",
+               "value": 2
+            },
+            {
+               "id": 110,
+               "name": "ITEM6",
+               "value": 3350
+            },
+            {
+               "id": 43,
+               "name": "TOTAL_HEAL",
+               "value": 16071
+            },
+            {
+               "id": 40,
+               "name": "TIME_PLAYED",
+               "value": 1952
+            },
+            {
+               "id": 109,
+               "name": "TOTAL_TIME_CROWD_CONTROL_DEALT",
+               "value": 962
+            },
+            {
+               "id": 106,
+               "name": "WARD_PLACED",
+               "value": 12
+            },
+            {
+               "id": 107,
+               "name": "NEUTRAL_MINIONS_KILLED_ENEMY_JUNGLE",
+               "value": 6
+            },
+            {
+               "id": 104,
+               "name": "TRUE_DAMAGE_TAKEN",
+               "value": 983
+            },
+            {
+               "id": 44,
+               "name": "TOTAL_UNITS_HEALED",
+               "value": 1
+            },
+            {
+               "id": 48,
+               "name": "ASSISTS",
+               "value": 6
+            }
+         ],
+         "spell2": 4,
+         "gameMode": "CLASSIC",
+         "mapId": 1,
+         "level": 30,
+         "invalid": false,
+         "subType": "RANKED_SOLO_5x5",
+         "championId": 36,
+         "createDate": 1389216602356
+      }
+   ],
+   "summonerId": 5908
+} */
+/*{
+ "name": "flare",
+ "children": [
+  {
+   "name": "analytics",
+   "children": [
+    {
+     "name": "cluster",
+     "children": [
+      {"name": "AgglomerativeCluster", "size": 3938},
+      {"name": "CommunityStructure", "size": 3812},
+      {"name": "HierarchicalCluster", "size": 6714},
+      {"name": "MergeEdge", "size": 743}
+     ]
+    },
+    {
+     "name": "graph",
+     "children": [
+      {"name": "BetweennessCentrality", "size": 3534},
+      {"name": "LinkDistance", "size": 5731},
+      {"name": "MaxFlowMinCut", "size": 7840},
+      {"name": "ShortestPaths", "size": 5914},
+      {"name": "SpanningTree", "size": 3416}
+     ]
+    },
+    {
+     "name": "optimization",
+     "children": [
+      {"name": "AspectRatioBanker", "size": 7074}
+     ]
+    }
+   ]
+  },
+  {
+   "name": "animate",
+   "children": [
+    {"name": "Easing", "size": 17010},
+    {"name": "FunctionSequence", "size": 5842},
+    {
+     "name": "interpolate",
+     "children": [
+      {"name": "ArrayInterpolator", "size": 1983},
+      {"name": "ColorInterpolator", "size": 2047},
+      {"name": "DateInterpolator", "size": 1375},
+      {"name": "Interpolator", "size": 8746},
+      {"name": "MatrixInterpolator", "size": 2202},
+      {"name": "NumberInterpolator", "size": 1382},
+      {"name": "ObjectInterpolator", "size": 1629},
+      {"name": "PointInterpolator", "size": 1675},
+      {"name": "RectangleInterpolator", "size": 2042}
+     ]
+    },
+    {"name": "ISchedulable", "size": 1041},
+    {"name": "Parallel", "size": 5176},
+    {"name": "Pause", "size": 449},
+    {"name": "Scheduler", "size": 5593},
+    {"name": "Sequence", "size": 5534},
+    {"name": "Transition", "size": 9201},
+    {"name": "Transitioner", "size": 19975},
+    {"name": "TransitionEvent", "size": 1116},
+    {"name": "Tween", "size": 6006}
+   ]
+  },
+   "name": "data",
+   "children": [
+    {
+     "name": "converters",
+     "children": [
+      {"name": "Converters", "size": 721},
+      {"name": "DelimitedTextConverter", "size": 4294},
+      {"name": "GraphMLConverter", "size": 9800},
+      {"name": "IDataConverter", "size": 1314},
+      {"name": "JSONConverter", "size": 2220}
+     ]
+    },
+    {"name": "DataField", "size": 1759},
+    {"name": "DataSchema", "size": 2165},
+    {"name": "DataSet", "size": 586},
+    {"name": "DataSource", "size": 3331},
+    {"name": "DataTable", "size": 772},
+    {"name": "DataUtil", "size": 3322}
+   ]
+  },
+  {
+   "name": "display",
+   "children": [
+    {"name": "DirtySprite", "size": 8833},
+    {"name": "LineSprite", "size": 1732},
+    {"name": "RectSprite", "size": 3623},
+    {"name": "TextSprite", "size": 10066}
+   ]
+  },
+  {
+   "name": "flex",
+   "children": [
+    {"name": "FlareVis", "size": 4116}
+   ]
+  },
+  {
+   "name": "physics",
+   "children": [
+    {"name": "DragForce", "size": 1082},
+    {"name": "GravityForce", "size": 1336},
+    {"name": "IForce", "size": 319},
+    {"name": "NBodyForce", "size": 10498},
+    {"name": "Particle", "size": 2822},
+    {"name": "Simulation", "size": 9983},
+    {"name": "Spring", "size": 2213},
+    {"name": "SpringForce", "size": 1681}
+   ]
+  },
+  {
+   "name": "query",
+   "children": [
+    {"name": "AggregateExpression", "size": 1616},
+    {"name": "And", "size": 1027},
+    {"name": "Arithmetic", "size": 3891},
+    {"name": "Average", "size": 891},
+    {"name": "BinaryExpression", "size": 2893},
+    {"name": "Comparison", "size": 5103},
+    {"name": "CompositeExpression", "size": 3677},
+    {"name": "Count", "size": 781},
+    {"name": "DateUtil", "size": 4141},
+    {"name": "Distinct", "size": 933},
+    {"name": "Expression", "size": 5130},
+    {"name": "ExpressionIterator", "size": 3617},
+    {"name": "Fn", "size": 3240},
+    {"name": "If", "size": 2732},
+    {"name": "IsA", "size": 2039},
+    {"name": "Literal", "size": 1214},
+    {"name": "Match", "size": 3748},
+    {"name": "Maximum", "size": 843},
+    {
+     "name": "methods",
+     "children": [
+      {"name": "add", "size": 593},
+      {"name": "and", "size": 330},
+      {"name": "average", "size": 287},
+      {"name": "count", "size": 277},
+      {"name": "distinct", "size": 292},
+      {"name": "div", "size": 595},
+      {"name": "eq", "size": 594},
+      {"name": "fn", "size": 460},
+      {"name": "gt", "size": 603},
+      {"name": "gte", "size": 625},
+      {"name": "iff", "size": 748},
+      {"name": "isa", "size": 461},
+      {"name": "lt", "size": 597},
+      {"name": "lte", "size": 619},
+      {"name": "max", "size": 283},
+      {"name": "min", "size": 283},
+      {"name": "mod", "size": 591},
+      {"name": "mul", "size": 603},
+      {"name": "neq", "size": 599},
+      {"name": "not", "size": 386},
+      {"name": "or", "size": 323},
+      {"name": "orderby", "size": 307},
+      {"name": "range", "size": 772},
+      {"name": "select", "size": 296},
+      {"name": "stddev", "size": 363},
+      {"name": "sub", "size": 600},
+      {"name": "sum", "size": 280},
+      {"name": "update", "size": 307},
+      {"name": "variance", "size": 335},
+      {"name": "where", "size": 299},
+      {"name": "xor", "size": 354},
+      {"name": "_", "size": 264}
+     ]
+    },
+    {"name": "Minimum", "size": 843},
+    {"name": "Not", "size": 1554},
+    {"name": "Or", "size": 970},
+    {"name": "Query", "size": 13896},
+    {"name": "Range", "size": 1594},
+    {"name": "StringUtil", "size": 4130},
+    {"name": "Sum", "size": 791},
+    {"name": "Variable", "size": 1124},
+    {"name": "Variance", "size": 1876},
+    {"name": "Xor", "size": 1101}
+   ]
+  },
+  {
+   "name": "scale",
+   "children": [
+    {"name": "IScaleMap", "size": 2105},
+    {"name": "LinearScale", "size": 1316},
+    {"name": "LogScale", "size": 3151},
+    {"name": "OrdinalScale", "size": 3770},
+    {"name": "QuantileScale", "size": 2435},
+    {"name": "QuantitativeScale", "size": 4839},
+    {"name": "RootScale", "size": 1756},
+    {"name": "Scale", "size": 4268},
+    {"name": "ScaleType", "size": 1821},
+    {"name": "TimeScale", "size": 5833}
+   ]
+  },
+  {
+   "name": "util",
+   "children": [
+    {"name": "Arrays", "size": 8258},
+    {"name": "Colors", "size": 10001},
+    {"name": "Dates", "size": 8217},
+    {"name": "Displays", "size": 12555},
+    {"name": "Filter", "size": 2324},
+    {"name": "Geometry", "size": 10993},
+    {
+     "name": "heap",
+     "children": [
+      {"name": "FibonacciHeap", "size": 9354},
+      {"name": "HeapNode", "size": 1233}
+     ]
+    },
+    {"name": "IEvaluable", "size": 335},
+    {"name": "IPredicate", "size": 383},
+    {"name": "IValueProxy", "size": 874},
+    {
+     "name": "math",
+     "children": [
+      {"name": "DenseMatrix", "size": 3165},
+      {"name": "IMatrix", "size": 2815},
+      {"name": "SparseMatrix", "size": 3366}
+     ]
+    },
+    {"name": "Maths", "size": 17705},
+    {"name": "Orientation", "size": 1486},
+    {
+     "name": "palette",
+     "children": [
+      {"name": "ColorPalette", "size": 6367},
+      {"name": "Palette", "size": 1229},
+      {"name": "ShapePalette", "size": 2059},
+      {"name": "SizePalette", "size": 2291}
+     ]
+    },
+    {"name": "Property", "size": 5559},
+    {"name": "Shapes", "size": 19118},
+    {"name": "Sort", "size": 6887},
+    {"name": "Stats", "size": 6557},
+    {"name": "Strings", "size": 22026}
+   ]
+  },
+  {
+   "name": "vis",
+   "children": [
+    {
+     "name": "axis",
+     "children": [
+      {"name": "Axes", "size": 1302},
+      {"name": "Axis", "size": 24593},
+      {"name": "AxisGridLine", "size": 652},
+      {"name": "AxisLabel", "size": 636},
+      {"name": "CartesianAxes", "size": 6703}
+     ]
+    },
+    {
+     "name": "controls",
+     "children": [
+      {"name": "AnchorControl", "size": 2138},
+      {"name": "ClickControl", "size": 3824},
+      {"name": "Control", "size": 1353},
+      {"name": "ControlList", "size": 4665},
+      {"name": "DragControl", "size": 2649},
+      {"name": "ExpandControl", "size": 2832},
+      {"name": "HoverControl", "size": 4896},
+      {"name": "IControl", "size": 763},
+      {"name": "PanZoomControl", "size": 5222},
+      {"name": "SelectionControl", "size": 7862},
+      {"name": "TooltipControl", "size": 8435}
+     ]
+    },
+    {
+     "name": "data",
+     "children": [
+      {"name": "Data", "size": 20544},
+      {"name": "DataList", "size": 19788},
+      {"name": "DataSprite", "size": 10349},
+      {"name": "EdgeSprite", "size": 3301},
+      {"name": "NodeSprite", "size": 19382},
+      {
+       "name": "render",
+       "children": [
+        {"name": "ArrowType", "size": 698},
+        {"name": "EdgeRenderer", "size": 5569},
+        {"name": "IRenderer", "size": 353},
+        {"name": "ShapeRenderer", "size": 2247}
+       ]
+      },
+      {"name": "ScaleBinding", "size": 11275},
+      {"name": "Tree", "size": 7147},
+      {"name": "TreeBuilder", "size": 9930}
+     ]
+    },
+    {
+     "name": "events",
+     "children": [
+      {"name": "DataEvent", "size": 2313},
+      {"name": "SelectionEvent", "size": 1880},
+      {"name": "TooltipEvent", "size": 1701},
+      {"name": "VisualizationEvent", "size": 1117}
+     ]
+    },
+    {
+     "name": "legend",
+     "children": [
+      {"name": "Legend", "size": 20859},
+      {"name": "LegendItem", "size": 4614},
+      {"name": "LegendRange", "size": 10530}
+     ]
+    },
+    {
+     "name": "operator",
+     "children": [
+      {
+       "name": "distortion",
+       "children": [
+        {"name": "BifocalDistortion", "size": 4461},
+        {"name": "Distortion", "size": 6314},
+        {"name": "FisheyeDistortion", "size": 3444}
+       ]
+      },
+      {
+       "name": "encoder",
+       "children": [
+        {"name": "ColorEncoder", "size": 3179},
+        {"name": "Encoder", "size": 4060},
+        {"name": "PropertyEncoder", "size": 4138},
+        {"name": "ShapeEncoder", "size": 1690},
+        {"name": "SizeEncoder", "size": 1830}
+       ]
+      },
+      {
+       "name": "filter",
+       "children": [
+        {"name": "FisheyeTreeFilter", "size": 5219},
+        {"name": "GraphDistanceFilter", "size": 3165},
+        {"name": "VisibilityFilter", "size": 3509}
+       ]
+      },
+      {"name": "IOperator", "size": 1286},
+      {
+       "name": "label",
+       "children": [
+        {"name": "Labeler", "size": 9956},
+        {"name": "RadialLabeler", "size": 3899},
+        {"name": "StackedAreaLabeler", "size": 3202}
+       ]
+      },
+      {
+       "name": "layout",
+       "children": [
+        {"name": "AxisLayout", "size": 6725},
+        {"name": "BundledEdgeRouter", "size": 3727},
+        {"name": "CircleLayout", "size": 9317},
+        {"name": "CirclePackingLayout", "size": 12003},
+        {"name": "DendrogramLayout", "size": 4853},
+        {"name": "ForceDirectedLayout", "size": 8411},
+        {"name": "IcicleTreeLayout", "size": 4864},
+        {"name": "IndentedTreeLayout", "size": 3174},
+        {"name": "Layout", "size": 7881},
+        {"name": "NodeLinkTreeLayout", "size": 12870},
+        {"name": "PieLayout", "size": 2728},
+        {"name": "RadialTreeLayout", "size": 12348},
+        {"name": "RandomLayout", "size": 870},
+        {"name": "StackedAreaLayout", "size": 9121},
+        {"name": "TreeMapLayout", "size": 9191}
+       ]
+      },
+      {"name": "Operator", "size": 2490},
+      {"name": "OperatorList", "size": 5248},
+      {"name": "OperatorSequence", "size": 4190},
+      {"name": "OperatorSwitch", "size": 2581},
+      {"name": "SortOperator", "size": 2023}
+     ]
+    },
+    {"name": "Visualization", "size": 16540}
+   ]
+  }
+ ]
+}*/

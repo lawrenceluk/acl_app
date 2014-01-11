@@ -1,0 +1,36 @@
+<div>
+	<h1>This is the<br><span class='gab' data-shadow-text="League of Data">League of Data</span></h1>
+</div>
+<div class="row beginning">
+  <div class="small-6 small-centered columns backed">
+  	Enter your username and select region to begin.
+  </div>
+  <form name="input" id="mainform">
+	  <div class="row">
+	    <div class="small-6 small-centered columns formhere">
+	    	<div class="row">
+		    	<div class="small-9 columns">
+			      <input type="text" name="user" placeholder="Username" id="userform"/>
+				  </div>
+				  <div class="small-3 columns">
+			      <select form="mainform" name="r" id="rselect">
+			        <option value="na">NA</option>
+			        <option value="euw">EUW</option>
+			        <option value="eune">EUNE</option>
+			      </select>
+			    </div>
+		  	</div>
+		  	<input value="Graph" class="button" id="gobutton" readonly>
+	    </div>
+	  </div>
+	</form>
+	<div class="small-8 small-centered columns player hidden" id="player">
+		<div id="playername"></div>
+		<div id="level"></div>
+		<div id="leagueinfo"></div>
+	</div>
+	<div class="small-8 small-centered columns hidden" id="statdata">
+	</div>
+	<div class="small-8 small-centered columns hidden" id="gamedata">
+	</div>
+</div>

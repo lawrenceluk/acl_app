@@ -1,0 +1,242 @@
+.beginning {
+	position: relative;
+	top: 180px;
+}
+
+.center {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+hr {
+	border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.backed {
+	text-align: center;
+	letter-spacing: 0.105em;
+	color: rgba(255, 255, 255, 0.75);
+	background: #34495e;
+	padding: 10px;
+	border-radius: 3px;
+	border-bottom: 3px solid rgba(0, 0, 0, 0.45);
+}
+
+.formhere {
+	margin-top: 40px;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.small {
+	color: #333;
+	font-size: 0.75em;
+}
+
+#userform {
+	font-size: 1.1em;
+	border-radius: 3px;
+}
+
+#gobutton {
+	-webkit-user-select: none; /* Chrome/Safari */        
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+ */
+
+	/* Rules below not implemented in browsers yet */
+	-o-user-select: none;
+	user-select: none;
+
+	font-size: 1.1em;
+	text-transform: uppercase;
+	letter-spacing: 0.13em;
+	padding: 8px;
+	width: 100%;
+	background: #f1c40f;
+	border-radius: 2px;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.45);
+	margin-bottom: -4px;
+	&:hover {
+		background: #C9AB30;
+	}
+	&:active {
+		background: #B3941B;
+	}
+}
+
+#level {
+	font-size: 0.35em;
+}
+
+.gap {
+	margin-top: 20px;
+}
+
+.player {
+	margin-top: 40px;
+	padding: 20px;
+
+	background: rgba(255, 255, 255, 0.85);
+	border-radius: 2px;
+	border: 4px groove rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 3px 4px #555;
+
+	text-align: center;
+	letter-spacing: 0.03em;
+	font-size: 4em;
+	color: #28293D;
+}
+
+.hidden {
+	display: none;
+}
+
+.portrait {
+	margin-top: 5px;
+	border: 4px inset #555;
+}
+
+.gametype {
+	margin-top: 20px;
+	padding: 20px;
+	background: rgba(255, 255, 255, 0.68);	
+	border-radius: 2px;
+	box-shadow: 0px 3px 4px #555;
+}
+
+.kills {
+	font-size: 1.25em;
+	color: #992323;
+}
+
+.deaths {
+	font-size: 1.25em;
+	color: black;
+}
+
+.assists {
+	font-size: 1.25em;
+	color: #335E2A;
+}
+
+.kda {
+	font-size: 1.25em;
+	color: #31518C;
+}
+
+.cs {
+	font-size: 1.25em;
+	color: black;
+}
+
+.gold {
+	font-size: 1.2em;
+	font-weight: 400;
+	color: #877A16;
+}
+
+.goldm {
+	font-size: 1.2em;
+	font-weight: 400;
+	color: #9E7908;
+}
+
+.expando {
+	padding: 8px;
+	background: #3E658C;
+	border-radius: 2px;
+	border: 2px ridge #7796B5;
+	font-size: 0.85em;
+	text-transform: uppercase;
+	letter-spacing: 0.09em;
+}
+
+.counting {
+	letter-spacing: 0.06em;
+	font-size: 0.8em;
+	color: #555;
+}
+
+.greenback {
+	background: #E9F7E6;
+}
+
+.champ {
+	font-size: 1.05em;
+	color: #222;
+}
+
+.t_gametype {
+	text-align: center;
+	font-size: 1em;
+}
+
+.dump {
+	font-family: monospace;
+	line-height: 1.2em;
+	background: rgba(0, 0, 0, 0.1);
+	padding: 8px;
+}
+.dump_item {
+	font-size: 0.86em;
+	color: #454;
+}
+
+.datablock {
+	margin-top: 30px;
+	line-height: 1.13em;
+	font-size: 0.9em;
+	color: #333;
+}
+
+.spellicon {
+	display: inline-block;
+	margin: 1px;
+	background-size: 36px !important;
+	width: 36px;
+	height: 36px;
+	border-radius: 3px;
+	border: 2px ridge rgba(0, 0, 0, 0.4);
+}
+
+.itemicon {
+	text-align: center;
+	display: inline-block;
+	margin: 1px;
+	width: 32px;
+	height: 32px;
+	border-radius: 2px;
+	border: 2px ridge rgba(0, 0, 0, 0.4);
+	background: #888;
+}
+
+ul
+{
+    list-style-type: none;
+}
+
+.statdisplay {
+	font-size: 0.85em;
+	background: #2768A8;
+	color: #fafafa;
+	padding: 4px 5px 2px 5px;
+	margin-bottom: 20px;
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+#leagueinfo {
+}
+
+.leaguelink {
+	padding: 4px;
+	background: rgba(0, 0, 0, 0.04);
+	margin: 7px;
+	display: inline-block;
+	font-size: 13px;
+	border-radius: 4px;
+	letter-spacing: 0.05em;
+	&:hover {
+		background: rgba(0, 0, 0, 0.07);
+	}
+}
