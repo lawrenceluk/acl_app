@@ -1,3 +1,5 @@
+// ADD BAR CHART TO SEE KDA/GPM OVER LAST GAMES
+
 $("#gobutton").click(function() {
 	var given = "user="+$("#userform").val()+"&r="+$("#rselect").val()
 	var data = "type=name&"+given
@@ -116,7 +118,9 @@ function loadGames(given) {
 				gold: 0,
 				time: 0,
 				wins: 0,
-				losses: 0
+				losses: 0,
+				kda: [],
+				gpm: []
 			}
 			var ranked = {
 				kills: 0,
@@ -126,12 +130,24 @@ function loadGames(given) {
 				gold: 0,
 				time: 0,
 				wins: 0,
-				losses: 0
+				losses: 0,
+				kda: [],
+				gpm: []
 			}
 
-			for (var i=0;i<games.length;i++) {
+			var sortable = []
+			for (var i in games)
+				sortable.push([i, games[i].createDate])
+			sortable.sort(function(a, b) {return b[1]-a[1]})
+
+			var order = []
+			for (var i in sortable) {
+				order.push(parseInt(sortable[i][0]))
+			}
+
+			for (var i in games) {
 				var str = ""
-				var thisgame = games[i]
+				var thisgame = games[order[i]]
 				var type = fixName(thisgame.subType)
 
 				var tstats = {}
@@ -150,21 +166,25 @@ function loadGames(given) {
 				}
 				if (gg) {
 					gg.time += tstats.TIME_PLAYED
-					if (tstats.CHAMPIONS_KILLED)
+					if (!tstats.CHAMPIONS_KILLED) tstats.CHAMPIONS_KILLED = 0
 					gg.kills += tstats.CHAMPIONS_KILLED
-					if (tstats.ASSISTS)
+					if (!tstats.ASSISTS) tstats.ASSISTS = 0
 					gg.assists += tstats.ASSISTS
-					if (tstats.NUM_DEATHS)
+					if (!tstats.NUM_DEATHS) tstats.NUM_DEATHS = 0
 					gg.deaths += tstats.NUM_DEATHS
-					if (tstats.MINIONS_KILLED)
+					if (!tstats.MINIONS_KILLED) tstats.MINIONS_KILLED = 0
 					gg.cs += tstats.MINIONS_KILLED
-					if (tstats.GOLD_EARNED)
+					if (!tstats.GOLD_EARNED) tstats.GOLD_EARNED = 0
 					gg.gold += tstats.GOLD_EARNED
 					if (tstats.WIN === 1) {
 						gg.wins++
 					} else {
 						gg.losses++
 					}
+					var dkda = (tstats.CHAMPIONS_KILLED+tstats.ASSISTS)/tstats.NUM_DEATHS
+					if (!isFinite(dkda)) dkda = (tstats.CHAMPIONS_KILLED+tstats.ASSISTS)
+					gg.kda.push(dkda)
+					gg.gpm.push(tstats.GOLD_EARNED/(tstats.TIME_PLAYED/60))
 				}
 
 				var game = "LOSS"
