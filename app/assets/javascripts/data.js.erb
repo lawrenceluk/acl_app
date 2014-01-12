@@ -258,8 +258,8 @@ function loadGames(given) {
 					str += "</div>" // end columns
 					str += "</div>" // end row
 					str += "</div>"
-					str += "<div class='small-2 columns'>"
-						str += "<div class='button expando' id='e_"+thisgame.createDate+"'>Show</div>"
+					str += "<div class='small-2 columns center'>"
+						str += "<div class='button expando' id='e_"+thisgame.createDate+"'>Details</div>"
 					str += "</div>"
 				str += "</div>"
 				str += "<div id='g_"+thisgame.createDate+"' class='hidden'>"
@@ -378,28 +378,39 @@ function loadGames(given) {
 			}
 			var rtitle = "Ranked"
 			var str2 = "<div class='row'>"
+			var gtype = ranked
 			for (var i=0;i<2;i++) {
-				if (ranked.time > 0) {
+				if (gtype.time > 0) {
 					str2 += "<div class='small-6 columns'>"
 						str2 += "<h3>"+rtitle+" Stats</h3><ul>"
-						str2 += "<li>Wins: <span class='assists'>"+ranked.wins+" ("+Beautify((ranked.wins/(ranked.losses+ranked.wins))*100)+"%)</span></li>"
-						str2 += "<li>Losses: <span class='kills'>"+ranked.losses+"</span></li>"
-						str2 += "<li>Kills: "+ranked.kills+"</li>"
-						str2 += "<li>Deaths: "+ranked.deaths+"</li>"
-						str2 += "<li>Assists: "+ranked.assists+"</li>"
-						var kda = (ranked.kills+ranked.assists)/ranked.deaths
+						str2 += "<li>Wins: <span class='assists'>"+gtype.wins+" ("+Beautify((gtype.wins/(gtype.losses+gtype.wins))*100)+"%)</span></li>"
+						str2 += "<li>Losses: <span class='kills'>"+gtype.losses+"</span></li>"
+						str2 += "<li>Kills: "+gtype.kills+"</li>"
+						str2 += "<li>Deaths: "+gtype.deaths+"</li>"
+						str2 += "<li>Assists: "+gtype.assists+"</li>"
+						var kda = (gtype.kills+gtype.assists)/gtype.deaths
 						if (!isFinite(kda))
 							kda = "∞" 
 						else kda = kda.toFixed(2)
 						str2 += "<li>KDA: <span class='kda'>"+kda+"</span></li>"
-						str2 += "<li>CS: "+ranked.cs+"</li>"
-						str2 += "<li>CS/game: <span class='cs'>"+Beautify(ranked.cs/(ranked.wins+ranked.losses))+"</span></li>"
-						str2 += "<li>Gold Earned: "+Beautify(ranked.gold)+"</li>"
-						str2 += "<li>Gold/game: <span class='gold'>"+Beautify(ranked.gold/(ranked.wins+ranked.losses))+"</span></li>"
-						str2 += "<li>Time played: "+Beautify(ranked.time/60)+" minutes</li>"
-						str2 += "<li>Avg Game Length: "+Beautify(ranked.time/60/(ranked.wins+ranked.losses))+" minutes</li>"
-						str2 += "<li>Avg Gold/m: <span class='goldm'>"+ (ranked.gold/(ranked.time/60)).toFixed(2)+"</span></li>"
+						str2 += "<li>CS: "+gtype.cs+"</li>"
+						str2 += "<li>CS/game: <span class='cs'>"+Beautify(gtype.cs/(gtype.wins+gtype.losses))+"</span></li>"
+						str2 += "<li>Gold Earned: "+Beautify(gtype.gold)+"</li>"
+						str2 += "<li>Gold/game: <span class='gold'>"+Beautify(gtype.gold/(gtype.wins+gtype.losses))+"</span></li>"
+						str2 += "<li>Time played: "+Beautify(gtype.time/60)+" minutes</li>"
+						str2 += "<li>Avg Game Length: "+Beautify(gtype.time/60/(gtype.wins+gtype.losses))+" minutes</li>"
+						str2 += "<li>Avg Gold/m: <span class='goldm'>"+ (gtype.gold/(gtype.time/60)).toFixed(2)+"</span></li>"
 						str2 += "</ul>"
+						if (gtype.kda.length > 1) {
+							str2 += "<h5>"+rtitle+" KDA history: </h5>"
+							str2 += "<canvas id='"+rtitle+"bar'></canvas>"
+						} else {
+							str2 += "<h6>Not enough data</h6>"
+						}
+						if (gtype.gpm.length > 1) {
+							str2 += "<h5>"+rtitle+" Gold/minute history: </h5>"
+							str2 += "<canvas id='"+rtitle+"gpm'></canvas>"
+						}
 					str2 += "</div>"
 				} else {
 					str2 += "<div class='small-6 columns'>"
@@ -407,12 +418,80 @@ function loadGames(given) {
 					str2 += "</div>"
 				}
 				rtitle = "Normal"
-				ranked = normal
+				gtype = normal
 			}
-			str += "</div>"
-			if (str2.length > 1) {
+			str2 += "</div>"
+			if (str2.length > 0) {
 				$("#statdata").html(str2)
 				$("#statdata").removeClass("hidden")
+			}
+			if (ranked.time > 0) {
+				var label = []
+				for (i in ranked.kda)
+					label[i] = ""
+				label[0] = "Oldest"
+				label[label.length-1] = "Recent"
+				var ctx = $("#Rankedbar").get(0).getContext("2d")
+				var data = {
+					labels : label,
+					datasets : [
+						{
+							fillColor : "rgba(151,187,205,0.5)",
+							strokeColor : "rgba(151,187,205,1)",
+							pointColor : "rgba(151,187,205,1)",
+							data : ranked.kda.reverse()
+						}
+					]
+				}
+				new Chart(ctx).Line(data)
+
+				var ctx2 = $("#Rankedgpm").get(0).getContext("2d")
+				data = {
+					labels : label,
+					datasets : [
+						{
+							fillColor : "rgba(202,182,103,0.5)",
+							strokeColor : "rgba(168,149,71,1)",
+							pointColor : "rgba(161,139,51,1)",
+							data : ranked.gpm.reverse()				
+						}
+					]
+				}
+				new Chart(ctx2).Line(data)
+			}
+			if (normal.time > 0) {
+				var label = []
+				for (i in normal.kda)
+					label[i] = ""
+				label[0] = "Oldest"
+				label[label.length-1] = "Recent"
+				var ctx = $("#Normalbar").get(0).getContext("2d")
+				var data = {
+					labels : label,
+					datasets : [
+						{
+							fillColor : "rgba(151,187,205,0.5)",
+							strokeColor : "rgba(151,187,205,1)",
+							pointColor : "rgba(151,187,205,1)",
+							data : normal.kda.reverse()
+						}
+					]					
+				}
+				new Chart(ctx).Line(data)
+
+				var ctx2 = $("#Normalgpm").get(0).getContext("2d")
+				data = {
+					labels : label,
+					datasets : [
+						{
+							fillColor : "rgba(202,182,103,0.5)",
+							strokeColor : "rgba(168,149,71,1)",
+							pointColor : "rgba(161,139,51,1)",
+							data : normal.gpm.reverse()				
+						}
+					]
+				}
+				new Chart(ctx2).Line(data)
 			}
 			$("#gamedata").removeClass("hidden")
 			declareListener()
@@ -427,11 +506,11 @@ function declareListener() {
 			if (e.target.id.split("_")[0] === 'e') {
 				var button = $("#"+e.target.id)
 				var target = $("#g_"+e.target.id.split("_")[1])
-				if (button.html() === "Show") {
+				if (button.html() === "Details") {
 					button.html("Hide")
 					target.removeClass("hidden")
 				} else {
-					button.html("Show")
+					button.html("Details")
 					target.addClass("hidden")
 				}
 			}
