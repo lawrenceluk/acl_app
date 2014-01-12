@@ -76,9 +76,8 @@ hr {
 .player {
 	margin-top: 40px;
 	padding: 20px;
-	//background-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
 	background-color: #34495e;
-	border-radius: 2px;
+	border-radius: 4px;
 	border-bottom: 4px groove rgba(0, 0, 0, 0.5);
 
 	text-align: center;
@@ -92,6 +91,7 @@ hr {
 }
 
 .portrait {
+	display: inline;
 	margin-top: 5px;
 	border: 4px inset #555;
 }
@@ -100,16 +100,16 @@ hr {
 	margin-top: 20px;
 	padding: 10px;
 	background: #fafafa;
-	border-radius: 2px;
-	box-shadow: 0px 3px 4px #555;
+	border-radius: 4px;
+	border-bottom: 4px solid rgba(0, 0, 0, 0.5);
 }
 
 .gametype {
-	margin-top: 20px;
+	margin: 20px 0;
 	padding: 20px;
 	background: rgba(255, 255, 255, 0.68);	
-	border-radius: 2px;
-	box-shadow: 0px 3px 4px #555;
+	border-radius: 4px;
+	border-bottom: 4px solid rgba(0, 0, 0, 0.5);
 }
 
 .kills {
@@ -189,7 +189,9 @@ hr {
 	font-size: 0.86em;
 	color: #454;
 }
-
+.nextto {
+	display: inline-block;
+}
 .datablock {
 	margin-top: 30px;
 	line-height: 1.13em;
@@ -198,11 +200,12 @@ hr {
 }
 
 .spellicon {
+	margin-top: 2px;
+	margin-left: 2px;
 	display: inline-block;
-	margin: 1px;
-	background-size: 36px !important;
-	width: 36px;
-	height: 36px;
+	background-size: 32px !important;
+	width: 32px;
+	height: 32px;
 	border-radius: 3px;
 	border: 2px ridge rgba(0, 0, 0, 0.4);
 }

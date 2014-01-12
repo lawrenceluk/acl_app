@@ -176,14 +176,18 @@ function loadGames(given) {
 
 				str += "<div class='gametype "+xtra+"'>"
 				str += "<div class='row gap'>"
-					str += "<div class='small-3 columns'>"
+					str += "<div class='small-2 columns'>"
 						var champ = getChamp(thisgame.championId)
 						str += "<a href='http://www.lolking.net/champions/"+champ.toLowerCase()+"' target='_blank'>"
 						str += "<div class='champ'>" + champ + " <span class='small'>("+tstats.LEVEL+")</span></div>"
+						str += "<div class='nextto'>"
 						str += "<img src='http://lkimg.zamimg.com/shared/riot/images/champions/"+thisgame.championId+"_64.png' class='portrait'/>"
+						str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell1+".png); width=30; height=30;'></div>"
+						str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell2+".png); width=30; height=30;'></div>"
+						str += "</div>"
 						str += "</a>"
 					str += "</div>"
-					str += "<div class='small-6 columns center'>"
+					str += "<div class='small-8 columns center'>"
 					str += "<div class='t_gametype'>"+type+" - "+game+" - "+Beautify(timeplayed/60)+" minutes </div><br>"
 					str += "<span class='counting'>"
 						if (!tstats.CHAMPIONS_KILLED) {
@@ -216,11 +220,7 @@ function loadGames(given) {
 						str += "</div>"
 					str += "</span>"
 					str += "<div class='row'>"
-					str += "<div class='small-2 columns'>"
-					str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell1+".png); width=32; height=32;'></div>"
-					str += "<div class='spellicon' style='background: url(http://lkimg.zamimg.com/images/spells/"+thisgame.spell2+".png);'></div>"
-					str += "</div>" // end columns
-					str += "<div class='small-10 columns'>"
+					str += "<div class='small-12 columns'>"
 					if (tstats.ITEM0)
 					str += "<div class='itemicon' style='background: url(http://lkimg.zamimg.com/shared/riot/images/items/"+tstats.ITEM0+"_32.png);'></div>"
 					if (tstats.ITEM1)
