@@ -337,7 +337,7 @@ function loadGames(given) {
 								if (!tstats.GOLD_SPENT) tstats.GOLD_SPENT = 0
 								str += "Earned: <span class='gold'>"+tstats.GOLD_EARNED+"</span><br>"
 								str += "Spent: <span class='goldm'>"+tstats.GOLD_SPENT+"</span><br>"
-								str += "Efficiency: "+(tstats.GOLD_SPENT/tstats.GOLD_EARNED).toFixed(2)+"%<br>"
+								str += "Efficiency: "+Beautify((tstats.GOLD_SPENT/tstats.GOLD_EARNED)*100)+"%<br>"
 								str += "<span class='small'>! Gold Spent is sometimes reported incorrectly.</span>"
 							str += "</div>"
 						str += "</div>"
