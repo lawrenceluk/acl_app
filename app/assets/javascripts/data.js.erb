@@ -30,6 +30,7 @@ function loadLeagues(given, region, id) {
 		dataType: "HTML",
 		success: function(response) {
 			var leagues = JSON.parse(response)
+			$("#leagueinfo").html("")
 			var str = "<div class='center'>"
 			for (var l in leagues) {
 				str += "<div class='leaguelink'><a href='http://www.lolking.net/summoner/"+region+"/"+id+"#leagues' target='_blank'>"
@@ -42,6 +43,10 @@ function loadLeagues(given, region, id) {
 			$("#leagueinfo").html(str)
 			loadGames(given)
 			//loadSummary(given)
+		},
+		error: function(response) {
+			$("#leagueinfo").html("")
+			loadGames(given)
 		}
 	})		
 }
@@ -102,6 +107,28 @@ function loadGames(given) {
 		success: function(response) {
 			var games = JSON.parse(response).games
 			$("#gamedata").html("")
+
+			var normal = {
+				kills: 0,
+				assists: 0,
+				deaths: 0,
+				cs: 0,
+				gold: 0,
+				time: 0,
+				wins: 0,
+				losses: 0
+			}
+			var ranked = {
+				kills: 0,
+				assists: 0,
+				deaths: 0,
+				cs: 0,
+				gold: 0,
+				time: 0,
+				wins: 0,
+				losses: 0
+			}
+
 			for (var i=0;i<games.length;i++) {
 				var str = ""
 				var thisgame = games[i]
@@ -114,6 +141,31 @@ function loadGames(given) {
 				}
 
 				var timeplayed = tstats.TIME_PLAYED
+
+				var gg = 0
+				if (type === "Normal") {
+					gg = normal
+				} else if (type.indexOf("Ranked") > -1) {
+					gg = ranked
+				}
+				if (gg) {
+					gg.time += tstats.TIME_PLAYED
+					if (tstats.CHAMPIONS_KILLED)
+					gg.kills += tstats.CHAMPIONS_KILLED
+					if (tstats.ASSISTS)
+					gg.assists += tstats.ASSISTS
+					if (tstats.NUM_DEATHS)
+					gg.deaths += tstats.NUM_DEATHS
+					if (tstats.MINIONS_KILLED)
+					gg.cs += tstats.MINIONS_KILLED
+					if (tstats.GOLD_EARNED)
+					gg.gold += tstats.GOLD_EARNED
+					if (tstats.WIN === 1) {
+						gg.wins++
+					} else {
+						gg.losses++
+					}
+				}
 
 				var game = "LOSS"
 				var xtra = ""
@@ -303,6 +355,44 @@ function loadGames(given) {
 				str += "</div>"
 				$("#gamedata").append(str)
 				drawGraphs(tstats, thaid, thaid_2, thaid_3)
+			}
+			var rtitle = "Ranked"
+			var str2 = "<div class='row'>"
+			for (var i=0;i<2;i++) {
+				if (ranked.time > 0) {
+					str2 += "<div class='small-6 columns'>"
+						str2 += "<h3>"+rtitle+" Stats</h3><ul>"
+						str2 += "<li>Wins: <span class='assists'>"+ranked.wins+" ("+Beautify((ranked.wins/(ranked.losses+ranked.wins))*100)+"%)</span></li>"
+						str2 += "<li>Losses: <span class='kills'>"+ranked.losses+"</span></li>"
+						str2 += "<li>Kills: "+ranked.kills+"</li>"
+						str2 += "<li>Deaths: "+ranked.deaths+"</li>"
+						str2 += "<li>Assists: "+ranked.assists+"</li>"
+						var kda = (ranked.kills+ranked.assists)/ranked.deaths
+						if (!isFinite(kda))
+							kda = "∞" 
+						else kda = kda.toFixed(2)
+						str2 += "<li>KDA: <span class='kda'>"+kda+"</span></li>"
+						str2 += "<li>CS: "+ranked.cs+"</li>"
+						str2 += "<li>CS/game: <span class='cs'>"+Beautify(ranked.cs/(ranked.wins+ranked.losses))+"</span></li>"
+						str2 += "<li>Gold Earned: "+Beautify(ranked.gold)+"</li>"
+						str2 += "<li>Gold/game: <span class='gold'>"+Beautify(ranked.gold/(ranked.wins+ranked.losses))+"</span></li>"
+						str2 += "<li>Time played: "+Beautify(ranked.time/60)+" minutes</li>"
+						str2 += "<li>Avg Game Length: "+Beautify(ranked.time/60/(ranked.wins+ranked.losses))+" minutes</li>"
+						str2 += "<li>Avg Gold/m: <span class='goldm'>"+ (ranked.gold/(ranked.time/60)).toFixed(2)+"</span></li>"
+						str2 += "</ul>"
+					str2 += "</div>"
+				} else {
+					str2 += "<div class='small-6 columns'>"
+						str2 += "<div class='placeholder'>No "+rtitle+" Games Played Recently</div>"
+					str2 += "</div>"
+				}
+				rtitle = "Normal"
+				ranked = normal
+			}
+			str += "</div>"
+			if (str2.length > 1) {
+				$("#statdata").html(str2)
+				$("#statdata").removeClass("hidden")
 			}
 			$("#gamedata").removeClass("hidden")
 			declareListener()

@@ -76,16 +76,15 @@ hr {
 .player {
 	margin-top: 40px;
 	padding: 20px;
-
-	background: rgba(255, 255, 255, 0.85);
+	//background-image: url(http://f.cl.ly/items/1t1C0W3y040g1J172r3h/mask.png);
+	background-color: #34495e;
 	border-radius: 2px;
-	border: 4px groove rgba(0, 0, 0, 0.5);
-	box-shadow: 0px 3px 4px #555;
+	border-bottom: 4px groove rgba(0, 0, 0, 0.5);
 
 	text-align: center;
 	letter-spacing: 0.03em;
 	font-size: 4em;
-	color: #28293D;
+	color: rgba(255, 255, 255, 0.94);
 }
 
 .hidden {
@@ -95,6 +94,14 @@ hr {
 .portrait {
 	margin-top: 5px;
 	border: 4px inset #555;
+}
+
+#statdata {
+	margin-top: 20px;
+	padding: 10px;
+	background: #fafafa;
+	border-radius: 2px;
+	box-shadow: 0px 3px 4px #555;
 }
 
 .gametype {
@@ -222,7 +229,8 @@ ul
 	color: #fafafa;
 	padding: 4px 5px 2px 5px;
 	margin-bottom: 20px;
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
+	border-radius: 3px;
+	border-left: 6px solid rgba(0, 0, 0, 0.15);
 }
 
 #leagueinfo {
@@ -239,4 +247,11 @@ ul
 	&:hover {
 		background: rgba(0, 0, 0, 0.07);
 	}
+}
+
+.placeholder {
+	text-align: center;
+	margin-top: 30px;
+	font-size: 2em;
+	color: #aaa;
 }
